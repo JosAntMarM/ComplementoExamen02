@@ -1,1 +1,77 @@
+public class ListaSimple {
+    Nodo head;
+    int size;
+
+    public ListaSimple() {
+        this.head = null;
+        this.size = 0;
+    }
+    
+    public void Insertar(int num){
+        Nodo temp = new Nodo(num);
+        if (head==null) {
+            head= temp;
+        }
+        else{
+            temp.next= head;
+            head=temp;
+            
+        }
+        size++;
+    }
+    
+    public void InvertirxGrupos(int grupo){
+        if (grupo <= 1 || head==null) {
+            return;
+        }
+        Nodo temp = new Nodo(0);
+        temp.next = head;
+        Nodo grupoPrev = temp;
+        while(true){
+            Nodo k = grupoPrev;
+            for (int i = 0; i < grupo && k != null; i++) {
+                k=k.next;
+            }
+            if (k==null) {
+                k=grupoPrev;
+                while(k.next != null){
+                    k=k.next;
+                }
+            }
+            Nodo grupoNext = k.next;
+            Nodo prev = grupoNext;
+            Nodo ahora = grupoPrev.next;
+            while(ahora != grupoNext){
+                Nodo it = ahora.next;
+                ahora.next = prev;
+                prev = ahora;
+                ahora = it;
+            }
+            Nodo it = grupoPrev.next;
+            grupoPrev.next = k;
+            grupoPrev = it;
+            if (grupoPrev.next ==null) {
+                break;
+            }
+            
+        }
+        head = temp.next;
+    }
+    
+    public void Imprimir(){
+        if (head==null) {
+            System.out.println("Lista vacia");
+        }
+        else{
+            Nodo it = head;
+            String text = "";
+            while(it!=null){
+                text += it.dato;
+                text += " ";
+                it=it.next;
+            }
+            System.out.println(text);
+        }
+    }
+}
 
