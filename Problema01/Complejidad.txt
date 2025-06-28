@@ -1,0 +1,25 @@
+Análisis de la complejidad del método InvertirxGrupos(int grupo)
+
+Este método sirve para invertir una lista enlazada simple por grupos de tamaño grupo. 
+Lo que hace básicamente es recorrer la lista y en cada bloque de grupo elementos, los invierte en el mismo orden de la lista original. 
+A continuación explico cómo es su complejidad:
+    Recorrido principal de la lista:
+    La función utiliza un while (true) para recorrer toda la lista. Este bucle no tiene un límite fijo, ya que depende de cuántos nodos tenga la lista. 
+    Sin embargo, en cada pasada del bucle se procesan hasta grupo nodos, así que el número de iteraciones va a ser aproximadamente n / grupo, donde n es la cantidad total de nodos.
+    
+    Búsqueda del nodo límite:
+    Dentro del bucle principal, hay un for que se encarga de encontrar el último nodo del grupo actual. 
+    Este for también se ejecuta como máximo grupo veces.
+
+    Inversión del grupo de nodos:
+    Luego se hace la inversión de los nodos del grupo usando un while, el cual también recorre como máximo grupo nodos en cada iteración.
+
+    Complejidad total del algoritmo:
+    Si en total hay n nodos y en cada vuelta del while se hacen operaciones que toman O(grupo), entonces la complejidad general del método es:
+
+    O((n / grupo) * grupo) = O(n)
+
+    Esto significa que el tiempo de ejecución crece proporcionalmente al número de nodos que tenga la lista.
+
+    Complejidad espacial:
+    El método no usa estructuras auxiliares grandes, solo algunos punteros temporales, así que el uso de memoria es constante, es decir, O(1).
