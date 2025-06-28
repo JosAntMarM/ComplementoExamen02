@@ -1,1 +1,15 @@
+Análisis de Complejidad
 
+Método: Guntar()
+Recorre una lista y concatena cada número en un String.
+Usa +=, lo cual en Java es lento porque crea un nuevo objeto en cada paso.
+Por eso, su complejidad es O(n²).
+
+Método: Resta_y_lista()
+Llama dos veces a Guntar() → O(n²) + O(m²)
+Resta los dos números → O(1)
+Separa los dígitos del resultado → O(log r)
+Imprime la lista nueva → O(log r)
+
+Conclusión:
+Complejidad total: O(n² + m² + log r)
