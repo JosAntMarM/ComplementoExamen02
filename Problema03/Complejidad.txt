@@ -1,0 +1,22 @@
+Análisis de la complejidad del método reordenar()
+
+El método reordenar() sirve para reorganizar una lista enlazada de tal manera que los elementos queden intercalados desde los extremos hacia el centro. 
+Por ejemplo, una lista como 1 → 2 → 3 → 4 → 5 se convertiría en 1 → 5 → 2 → 4 → 3. Para lograr esto, el algoritmo sigue tres pasos principales, y a continuación se analiza su complejidad:
+
+    Buscar el punto medio de la lista:
+    Se usan dos punteros (lento y rapido) para encontrar el nodo del medio. rapido avanza de dos en dos y lento de uno en uno. 
+    Este recorrido toma aproximadamente n/2 pasos, por lo tanto su complejidad es O(n).
+
+    Invertir la segunda mitad de la lista:
+    Luego de separar la lista en dos mitades, la segunda mitad se invierte nodo por nodo usando punteros auxiliares. 
+    Aunque solo se trabaja con la mitad de la lista, al ser proporcional al tamaño total, esta operación también es O(n).
+
+    Intercalar ambas mitades:
+    Finalmente, se intercalan los nodos de la primera mitad con los de la segunda mitad ya invertida. 
+    Este paso también recorre cada nodo una sola vez, por lo que sigue siendo O(n).
+
+Además, durante todo el proceso solo se utilizan variables temporales (punteros como prev, actual, temp1, etc.), sin crear estructuras adicionales, por lo tanto:
+
+    Complejidad temporal: O(n)
+
+    Complejidad espacial: O(1)
