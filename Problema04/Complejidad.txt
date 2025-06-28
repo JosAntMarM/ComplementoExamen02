@@ -1,0 +1,16 @@
+Análisis de la complejidad del método invertirSublista
+
+Este método sirve para invertir solo una parte específica de una lista enlazada, desde la posición a hasta la posición b. 
+Lo interesante es que no crea una nueva lista, sino que trabaja directamente con la original y solo reacomoda los punteros.
+
+En cuanto a la complejidad:
+
+    Complejidad temporal (O(n)):
+    Lo primero que hace el método es recorrer la lista hasta llegar a la posición a - 1. Ese recorrido depende del valor de a, pero en el peor caso puede llegar casi hasta el final.
+    Luego, hace un segundo recorrido para invertir los nodos desde la posición a hasta b. Eso toma b - a pasos.
+    Si sumamos ambos recorridos, vemos que el algoritmo, en el peor caso, puede recorrer toda la lista una sola vez. 
+    Por eso, su complejidad temporal es O(n).
+
+    Complejidad espacial (O(1)):
+    No se usa ninguna estructura extra como arrays o listas auxiliares. Solo se utilizan unas cuantas variables (como it, inicio, despues, etc.), que ocupan espacio constante.
+    Por eso, su complejidad espacial es O(1).
